@@ -18,6 +18,7 @@ public class PhoneNumberAuth extends AppCompatActivity {
         binding = ActivityPhoneNumberAuthBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        getSupportActionBar().hide();
         binding.submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
