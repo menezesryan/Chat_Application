@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chat_Application">
         <activity
+            android:name=".OTPActivity"
+            android:exported="true" />
+        <activity
             android:name=".PhoneNumberAuth"
             android:exported="true" />
         <activity
