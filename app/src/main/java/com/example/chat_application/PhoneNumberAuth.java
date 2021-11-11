@@ -19,11 +19,14 @@ public class PhoneNumberAuth extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         getSupportActionBar().hide();
+
         binding.submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PhoneNumberAuth.this, OTPActivity.class);
-                intent.putExtra("number", binding.phoneNumber.getText().toString());
+                String phone = "+91";
+                phone = phone + binding.phoneNumber.getText().toString();
+                intent.putExtra("number", phone);
                 startActivity(intent);
             }
         });
