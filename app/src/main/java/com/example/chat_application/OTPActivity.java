@@ -32,8 +32,9 @@ public class OTPActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         auth = FirebaseAuth.getInstance();
         String phone = getIntent().getStringExtra("number");
+        binding.textView.setText("Verify: " + phone);
         getSupportActionBar().hide();
-        binding.otp.requestFocus();
+        binding.otpView.requestFocus();
         PhoneAuthOptions options = PhoneAuthOptions.newBuilder(auth)
 
                 .setPhoneNumber(phone)
@@ -64,7 +65,7 @@ public class OTPActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
 
-                    PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId,binding.otp.getText().toString());
+                    PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId,binding.otpView.getText().toString());
                     auth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
