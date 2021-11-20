@@ -3,6 +3,7 @@ package com.example.chat_application;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -34,7 +35,7 @@ public class OTPActivity extends AppCompatActivity {
         String phone = getIntent().getStringExtra("number");
         binding.textView.setText("Verify: " + phone);
         getSupportActionBar().hide();
-        binding.otpView.requestFocus();
+        //binding.otpView.requestFocus();
         PhoneAuthOptions options = PhoneAuthOptions.newBuilder(auth)
 
                 .setPhoneNumber(phone)
@@ -71,7 +72,10 @@ public class OTPActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful())
                             {
-                                Toast.makeText(OTPActivity.this, "Logged In", Toast.LENGTH_LONG).show();
+                                //Toast.makeText(OTPActivity.this, "Logged In", Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(OTPActivity.this, SetupProfileActivity.class);
+                                startActivity(intent);
+                                finishAffinity();
                             }
                             else
                             {
