@@ -63,7 +63,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/phoneNumber"
+                android:id="@+id/nameBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -76,11 +76,12 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <Button
-                android:id="@+id/submitBtn"
+                android:id="@+id/setupProfileBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="SETUP PROFILE" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
