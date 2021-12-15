@@ -13,12 +13,15 @@
         android:theme="@style/Theme.Chat_Application"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".SetupProfileActivity"
             android:exported="true" />
         <activity
             android:name=".OTPActivity"
             android:exported="true"
-            android:windowSoftInputMode="stateVisible|adjustResize"/>
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name=".PhoneNumberAuth"
             android:exported="true"
@@ -32,6 +35,10 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

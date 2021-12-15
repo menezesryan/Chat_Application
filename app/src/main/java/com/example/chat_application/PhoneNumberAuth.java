@@ -7,16 +7,26 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.chat_application.databinding.ActivityPhoneNumberAuthBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class PhoneNumberAuth extends AppCompatActivity {
 
     ActivityPhoneNumberAuthBinding binding;     //binding acts in place of findViewById(). so we can directly use xml id instead of creating objects here
 
+    FirebaseAuth auth;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityPhoneNumberAuthBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        
+        auth = FirebaseAuth.getInstance();
+        if(auth.getCurrentUser() !=null){
+            Intent intent =new Intent(PhoneNumberAuth.this,MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
         getSupportActionBar().hide();
 
