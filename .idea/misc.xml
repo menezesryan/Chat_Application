@@ -4,20 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Chat_Application/app/src/main/res/drawable/text_outline.xml" value="0.2703125" />
-        <entry key="..\:/Chat_Application/app/src/main/res/layout/activity_main.xml" value="0.2296195652173913" />
+        <entry key="..\:/Chat_Application/app/src/main/res/layout/activity_chat.xml" value="0.23020833333333332" />
+        <entry key="..\:/Chat_Application/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Chat_Application/app/src/main/res/layout/activity_otpactivity.xml" value="0.264" />
         <entry key="..\:/Chat_Application/app/src/main/res/layout/activity_phone_number_auth.xml" value="0.264" />
         <entry key="..\:/Chat_Application/app/src/main/res/layout/activity_setup_profile.xml" value="0.25985844287158744" />
-        <entry key="..\:/MAD_Lab/Chat_Application/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14322916666666666" />
-        <entry key="..\:/MAD_Lab/Chat_Application/app/src/main/res/drawable/circle_green.xml" value="0.26614583333333336" />
-        <entry key="..\:/MAD_Lab/Chat_Application/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14322916666666666" />
-        <entry key="..\:/MAD_Lab/Chat_Application/app/src/main/res/layout/activity_chat.xml" value="0.3729946524064171" />
-        <entry key="..\:/MAD_Lab/Chat_Application/app/src/main/res/layout/activity_main.xml" value="0.4" />
-        <entry key="..\:/MAD_Lab/Chat_Application/app/src/main/res/layout/activity_otpactivity.xml" value="0.12708333333333333" />
-        <entry key="..\:/MAD_Lab/Chat_Application/app/src/main/res/layout/row_conversation.xml" value="0.4" />
-        <entry key="..\:/MAD_Lab/Chat_Application/app/src/main/res/menu/menu.xml" value="0.25" />
-        <entry key="..\:/MAD_Lab/Chat_Application/app/src/main/res/menu/topmenu.xml" value="0.25" />
-        <entry key="..\:/MAD_Lab/Chat_Application/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14322916666666666" />
+        <entry key="..\:/Chat_Application/app/src/main/res/layout/row_conversation.xml" value="0.23020833333333332" />
+        <entry key="..\:/Chat_Application/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Chat_Application/app/src/main/res/menu/topmenu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Chat_Application/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15185185185185185" />
+        <entry key="..\:/Chat_Application/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.14635416666666667" />
       </map>
     </option>
   </component>
