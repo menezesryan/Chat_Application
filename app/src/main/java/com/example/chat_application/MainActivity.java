@@ -1,15 +1,13 @@
 package com.example.chat_application;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.chat_application.databinding.ActivityMainBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -74,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 Intent i = new Intent(MainActivity.this, PhoneNumberAuth.class);
                 startActivity(i);
+                finishAffinity();
                 break;
         }
         return super.onOptionsItemSelected(item);
