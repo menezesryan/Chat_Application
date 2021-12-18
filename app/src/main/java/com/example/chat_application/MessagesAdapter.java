@@ -1,6 +1,7 @@
 package com.example.chat_application;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.chat_application.databinding.ItemReceiveBinding;
 import com.example.chat_application.databinding.ItemSentBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -28,16 +30,44 @@ public class MessagesAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        if(viewType == ITEM_SENT)
+        {
+            View view = LayoutInflater.from(context).inflate(R.layout.item_sent,parent,false);
+            return new SentViewHolder(view);
+        }
+        else
+        {
+            View view = LayoutInflater.from(context).inflate(R.layout.item_receive,parent,false);
+            return new ReceiverViewHolder(view);
+        }
     }
 
     @Override
     public int getItemViewType(int position) {
-        return super.getItemViewType(position);
+        Message message = messages.get(position);
+        if(FirebaseAuth.getInstance().getUid().equals(message.getSenderId())){
+            return ITEM_SENT;
+        }
+        else
+        {
+            return ITEM_RECEIVE;
+        }
+//        return super.getItemViewType(position);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        Message message = messages.get(position);
+        if(holder.getClass() == SentViewHolder.class)
+        {
+            SentViewHolder viewHolder = (SentViewHolder) holder;
+            viewHolder.binding.message.setText(message.getMessage());
+        }
+        else
+        {
+            ReceiverViewHolder viewHolder = (ReceiverViewHolder) holder;
+            viewHolder.binding.message.setText(message.getMessage());
+        }
 
     }
 
@@ -46,9 +76,9 @@ public class MessagesAdapter extends RecyclerView.Adapter {
         return messages.size();
     }
 
-    public class sentViewHolder extends RecyclerView.ViewHolder{
+    public class SentViewHolder extends RecyclerView.ViewHolder{
         ItemSentBinding binding;
-        public sentViewHolder(@NonNull View itemView) {
+        public SentViewHolder(@NonNull View itemView) {
             super(itemView);
             binding = ItemSentBinding.bind(itemView);
         }
