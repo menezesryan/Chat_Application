@@ -1,7 +1,7 @@
 package com.example.chat_application;
 
 public class Message {
-    private String messageId, message, senderId;
+    public String messageId, message, senderId;
     private long timestamp;
 
     public Message() {

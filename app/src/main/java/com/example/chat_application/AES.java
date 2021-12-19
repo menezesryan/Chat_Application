@@ -1,7 +1,12 @@
 package com.example.chat_application;
 
+import android.security.keystore.KeyGenParameterSpec;
+import android.security.keystore.KeyProperties;
+
 import java.security.InvalidKeyException;
+import java.security.KeyStore;
 import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
 import java.util.Base64;
 
 import javax.crypto.BadPaddingException;
@@ -11,24 +16,33 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.GCMParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 
 public class AES {
 
-    private SecretKey key;
-    private int KEY_SIZE = 128;
-    private Cipher encryptionCipher;
+
+    private String keyInString = "4c5QWIBs1k6ojfoxiQDRbVk4E2YudfBi06knJEnIwCE=";
+    public Cipher encryptionCipher;
     private int T_LEN = 128;
+    private SecretKey key;
 
-    public void init(){
-        try {
-            KeyGenerator generator = KeyGenerator.getInstance("AES");
-            generator.init(KEY_SIZE);
-            key = generator.generateKey();
-
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
+    AES(){
+        byte[] decodedKey = Base64.getDecoder().decode(keyInString);
+        // rebuild key using SecretKeySpec
+        key = new SecretKeySpec(decodedKey, 0, decodedKey.length, "AES");
     }
+//    public static void init(){
+//        try {
+//            KeyGenerator generator = KeyGenerator.getInstance("AES");
+//            generator.init(128);
+//            key = generator.generateKey();
+//            System.err.println(key);
+//
+//
+//        } catch (NoSuchAlgorithmException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public String encrypt(String message)
     {
@@ -59,8 +73,8 @@ public class AES {
         Cipher decryptionCipher = Cipher.getInstance("AES/GCM/NoPadding");
         GCMParameterSpec spec = new GCMParameterSpec(T_LEN,encryptionCipher.getIV());
         decryptionCipher.init(Cipher.DECRYPT_MODE,key,spec);
-        byte[] decrpyedBytes = decryptionCipher.doFinal(messageInBytes);
-        return new String(decrpyedBytes);
+        byte[] decryptedBytes = decryptionCipher.doFinal(messageInBytes);
+        return new String(decryptedBytes);
     }
 
     private String encode(byte[] data)

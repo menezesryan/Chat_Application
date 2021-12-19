@@ -26,8 +26,6 @@ public class ChatActivity extends AppCompatActivity {
     String senderRoom, receiverRoom;
     FirebaseDatabase database;
 
-    AES aes = new AES();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +56,10 @@ public class ChatActivity extends AppCompatActivity {
                         for(DataSnapshot snapshot1 : snapshot.getChildren())
                         {
                             Message message = snapshot1.getValue(Message.class);
-                           // message.decryptMessage();
+//                            message.decryptMessage();
+                            AES aes = new AES();
+                            messages.add(message);
+
                         }
                         adapter.notifyDataSetChanged();
                     }
@@ -77,8 +78,6 @@ public class ChatActivity extends AppCompatActivity {
                 Date date = new Date();
                 Message message = new Message(messageTxt,senderUid, date.getTime());
                 binding.messageBox.setText("");
-
-                //message.encryptMessage();
 
                 database.getReference().child("chats")
                         .child(senderRoom)
