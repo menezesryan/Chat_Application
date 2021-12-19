@@ -73,7 +73,9 @@
                 android:textColor="@android:color/black"
                 app:OtpItemCount="6"
                 app:OtpLineColor="@color/green"
-                app:OtpViewType="line" />
+                app:OtpViewType="line"
+                android:focusableInTouchMode="true"
+                />
 
             <Button
                 android:id="@+id/submit"

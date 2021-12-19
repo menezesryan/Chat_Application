@@ -20,29 +20,23 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class AES {
 
-
-    private String keyInString = "4c5QWIBs1k6ojfoxiQDRbVk4E2YudfBi06knJEnIwCE=";
-    public Cipher encryptionCipher;
+    private Cipher encryptionCipher;
     private int T_LEN = 128;
     private SecretKey key;
 
-    AES(){
-        byte[] decodedKey = Base64.getDecoder().decode(keyInString);
-        // rebuild key using SecretKeySpec
-        key = new SecretKeySpec(decodedKey, 0, decodedKey.length, "AES");
+
+    public void init(){
+        try {
+            KeyGenerator generator = KeyGenerator.getInstance("AES");
+            generator.init(128);
+            key = generator.generateKey();
+            System.err.println(key);
+
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
     }
-//    public static void init(){
-//        try {
-//            KeyGenerator generator = KeyGenerator.getInstance("AES");
-//            generator.init(128);
-//            key = generator.generateKey();
-//            System.err.println(key);
-//
-//
-//        } catch (NoSuchAlgorithmException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     public String encrypt(String message)
     {

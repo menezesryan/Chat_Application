@@ -9,8 +9,10 @@
         <entry key="..\:/Chat_Application/app/src/main/res/drawable/receive_drawable.xml" value="0.1" />
         <entry key="..\:/Chat_Application/app/src/main/res/drawable/sent_drawable.xml" value="0.1" />
         <entry key="..\:/Chat_Application/app/src/main/res/drawable/text_outline.xml" value="0.2703125" />
-        <entry key="..\:/Chat_Application/app/src/main/res/layout/activity_chat.xml" value="0.23020833333333332" />
+        <entry key="..\:/Chat_Application/app/src/main/res/layout/activity_call.xml" value="0.1" />
+        <entry key="..\:/Chat_Application/app/src/main/res/layout/activity_chat.xml" value="0.2" />
         <entry key="..\:/Chat_Application/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Chat_Application/app/src/main/res/layout/activity_main2.xml" value="0.13541666666666666" />
         <entry key="..\:/Chat_Application/app/src/main/res/layout/activity_otpactivity.xml" value="0.264" />
         <entry key="..\:/Chat_Application/app/src/main/res/layout/activity_phone_number_auth.xml" value="0.264" />
         <entry key="..\:/Chat_Application/app/src/main/res/layout/activity_setup_profile.xml" value="0.25985844287158744" />

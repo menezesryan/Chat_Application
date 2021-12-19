@@ -3,6 +3,9 @@
     package="com.example.chat_application">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chat_Application"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".CallActivity"
+            android:exported="true" />
         <activity
             android:name=".ChatActivity"
             android:exported="false" />

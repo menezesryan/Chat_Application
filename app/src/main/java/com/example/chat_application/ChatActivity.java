@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -31,6 +32,17 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityChatBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        binding.videoCallbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChatActivity.this, CallActivity.class);
+                intent.putExtra("username", FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber());
+                startActivity(intent);
+            }
+        });
+
+
 
         messages = new ArrayList<>();
         adapter = new MessagesAdapter(this,messages);

@@ -72,8 +72,9 @@
 
     <ImageView
         android:id="@+id/sendBtn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="35dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:layout_weight="1"
         android:background="@drawable/circle_green"
@@ -82,4 +83,18 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/cardView2"
         app:srcCompat="@android:drawable/ic_menu_send" />
+
+    <ImageView
+        android:id="@+id/videoCallbtn"
+        android:layout_width="39dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cardView2"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_baseline_videocam_24" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
