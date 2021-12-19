@@ -13,6 +13,22 @@ public class Message {
         this.timestamp = timestamp;
     }
 
+    public void encryptMessage()
+    {
+        AES aes = new AES();
+        message = aes.encrypt(message);
+    }
+
+    public void decryptMessage()
+    {
+        AES aes = new AES();
+        try {
+            message = aes.decrypt(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public String getMessageId() {
         return messageId;
     }
